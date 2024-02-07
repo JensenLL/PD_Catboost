@@ -1,0 +1,42 @@
+syntax = "proto2";
+
+package NCB.NIdl;
+
+// TODO(yazevnul): duplicates `ENanMode` from `catboost/private/libs/options/enums.h`
+enum ENanMode {
+    NM_UNKNOWN   = 0;
+    NM_MIN       = 1;
+    NM_MAX       = 2;
+    NM_FORBIDDEN = 3;
+}
+
+message TFeatureQuantizationSchema {
+    // Sorted (asc.)
+    repeated float Borders    = 1;
+    optional ENanMode NanMode = 2;
+}
+
+//TODO(ivankozlov98): duplicates `TValueWithCount` from `catboost/libs/data/cat_feature_perfect_hash.h`
+message TValueWithCount {
+    optional uint32 Value = 1; // by default = 0
+    optional uint32 Count = 2; // by default = 0
+}
+
+message TCatFeatureQuantizationSchema {
+    map<uint32, TValueWithCount> PerfectHashes = 1;
+}
+
+message TPoolQuantizationSchema {
+    // [flat feature index]
+    map<uint32, TFeatureQuantizationSchema> FeatureIndexToSchema = 1;
+
+    // [flat feature index] -> ([hashCategorical] -> [perfectHash(number), count of this hashCategorical])
+    map<uint32, TCatFeatureQuantizationSchema> CatFeatureIndexToSchema = 3;
+
+    /* only one of these fields can be nonempty (but all can be empty)
+     * 'oneof' is not used because ClassNames had been already present in the message
+     */
+    repeated int32 IntegerClassLabels = 5;
+    repeated float FloatClassLabels = 6;
+    repeated string ClassNames = 2; // ClassNames is a legacy field name, should be StringClassLabels
+}

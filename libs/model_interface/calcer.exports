@@ -1,0 +1,56 @@
+C GetErrorString
+
+C ModelCalcerCreate
+C ModelCalcerDelete
+
+C DataWrapperCreate
+C DataWrapperDelete
+C AddFloatFeatures
+C AddCatFeatures
+C AddTextFeatures
+C AddEmbeddingFeatures
+C BuildDataProvider
+
+C LoadFullModelFromFile
+C LoadFullModelFromBuffer
+
+C EnableGPUEvaluation
+C GetSupportedEvaluatorTypes
+C SetPredictionType
+C SetPredictionTypeString
+
+C CalcModelPrediction
+C CalcModelPredictionText
+C CalcModelPredictionTextAndEmbeddings
+C CalcModelPredictionSingle
+C CalcModelPredictionFlat
+C CalcModelPredictionFlatTransposed
+C CalcModelPredictionWithHashedCatFeatures
+C CalcModelPredictionWithHashedCatFeaturesAndTextFeatures
+C CalcModelPredictionWithHashedCatFeaturesAndTextAndEmbeddingFeatures
+C PredictSpecificClass
+C PredictSpecificClassText
+C PredictSpecificClassTextAndEmbeddings
+C PredictSpecificClassSingle
+C PredictSpecificClassWithHashedCatFeatures
+C PredictSpecificClassWithHashedCatFeaturesAndTextFeatures
+C PredictSpecificClassWithHashedCatFeaturesAndTextAndEmbeddingFeatures
+
+C GetStringCatFeatureHash
+C GetIntegerCatFeatureHash
+C GetFloatFeaturesCount
+C GetCatFeaturesCount
+C GetTextFeaturesCount
+C GetEmbeddingFeaturesCount
+C GetTreeCount
+C GetDimensionsCount
+C GetPredictionDimensionsCount
+C CheckModelMetadataHasKey
+C GetModelInfoValueSize
+C GetModelInfoValue
+C GetModelUsedFeaturesNames
+
+C GetCatFeatureIndices
+C GetFloatFeatureIndices
+C GetTextFeatureIndices
+C GetEmbeddingFeatureIndices

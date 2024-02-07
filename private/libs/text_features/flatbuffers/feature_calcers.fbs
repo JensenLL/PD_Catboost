@@ -1,0 +1,39 @@
+include "catboost/libs/helpers/flatbuffers/guid.fbs";
+
+namespace NCatBoostFbs;
+
+table TBM25 {
+    NumClasses: uint;
+    ParamK: float;
+    ParamB: float;
+    TruncateBorder: float;
+    TotalTokens: ulong;
+    ClassTotalTokens: [ulong];
+}
+
+table TNaiveBayes {
+    NumClasses: uint;
+    ClassPrior: float;
+    TokenPrior: float;
+    NumSeenTokens: ulong;
+    ClassDocs: [uint];
+    ClassTotalTokens: [ulong];
+}
+
+table TBoW {
+    NumTokens: uint;
+}
+
+union TAnyFeatureCalcer {
+    TBM25,
+    TNaiveBayes,
+    TBoW
+}
+
+table TFeatureCalcer {
+    Id: TGuid;
+    ActiveFeatureIndices: [uint];
+    FeatureCalcerImpl: TAnyFeatureCalcer;
+}
+
+root_type TFeatureCalcer;

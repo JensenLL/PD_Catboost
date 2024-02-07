@@ -1,0 +1,75 @@
+include "catboost/libs/helpers/flatbuffers/guid.fbs";
+
+namespace NCatBoostFbs;
+
+enum ENanValueTreatment : byte {
+    AsIs,
+    AsFalse,
+    AsTrue
+}
+
+table TFloatFeature {
+    HasNans:bool = false;
+    Index:int = -1;
+    FlatIndex:int = -1;
+    Borders:[float];
+    FeatureId:string;
+    NanValueTreatment:ENanValueTreatment = AsIs;
+}
+
+table TCatFeature {
+    Index:int = -1;
+    FlatIndex:int = -1;
+    FeatureId:string;
+    UsedInModel:bool = true;
+}
+
+table TTextFeature {
+    Index:int = -1;
+    FlatIndex:int = -1;
+    FeatureId:string;
+    UsedInModel:bool = true;
+}
+
+table TEmbeddingFeature {
+    Index:int = -1;
+    FlatIndex:int = -1;
+    FeatureId:string;
+    Dimension:int;
+    UsedInModel:bool = true;
+}
+
+enum ESourceFeatureType : byte {
+    Text,
+    Embedding
+}
+
+table TEstimatedFeature {
+    SourceFeatureIndex:int = -1;
+    CalcerId:TGuid;
+    LocalIndex:int = -1;
+    Borders:[float];
+    SourceFeatureType:ESourceFeatureType = Text;
+}
+
+table TOneHotFeature {
+    Index:int = -1;
+    Values:[int];
+    StringValues:[string];
+}
+
+struct TFloatSplit {
+    Index:int;
+    Border:float;
+}
+
+struct TOneHotSplit {
+    Index:int;
+    Value:int;
+}
+
+table TFeatureCombination {
+    CatFeatures:[int];
+    FloatSplits:[TFloatSplit];
+    OneHotSplits:[TOneHotSplit];
+}

@@ -1,0 +1,1148 @@
+{
+    "test.test_allow_writing_files_and_used_ram_limit[CPU-1024]": {
+        "uri": "file://test.test_allow_writing_files_and_used_ram_limit_CPU-1024_/predictions.npy"
+    },
+    "test.test_allow_writing_files_and_used_ram_limit[CPU-2Gb]": {
+        "uri": "file://test.test_allow_writing_files_and_used_ram_limit_CPU-2Gb_/predictions.npy"
+    },
+    "test.test_approximate_shap_feature_importance[CPU]": {
+        "uri": "file://test.test_approximate_shap_feature_importance_CPU_/feature_importance.npy"
+    },
+    "test.test_approximate_shap_feature_importance_multiclass[CPU]": {
+        "uri": "file://test.test_approximate_shap_feature_importance_multiclass_CPU_/feature_importance.npy"
+    },
+    "test.test_approximate_shap_feature_importance_multirmse[CPU]": {
+        "uri": "file://test.test_approximate_shap_feature_importance_multirmse_CPU_/feature_importance.npy"
+    },
+    "test.test_approximate_shap_feature_importance_ranking[CPU]": {
+        "uri": "file://test.test_approximate_shap_feature_importance_ranking_CPU_/feature_importance.npy"
+    },
+    "test.test_approximate_shap_feature_importance_with_langevin": {
+        "uri": "file://test.test_approximate_shap_feature_importance_with_langevin/feature_importance.npy"
+    },
+    "test.test_binclass_with_nontrivial_classes": {
+        "uri": "file://test.test_binclass_with_nontrivial_classes/catboost_training.json"
+    },
+    "test.test_class_names[CPU]": {
+        "uri": "file://test.test_class_names_CPU_/predictions.txt"
+    },
+    "test.test_class_weights_list_binclass[CPU]": {
+        "uri": "file://test.test_class_weights_list_binclass_CPU_/model.bin"
+    },
+    "test.test_classification_ctr[CPU]": {
+        "uri": "file://test.test_classification_ctr_CPU_/model.bin"
+    },
+    "test.test_compute_options": {
+        "uri": "file://test.test_compute_options/options.json"
+    },
+    "test.test_continue_learning_with_changing_dataset[samples=more,features=more]": {
+        "uri": "file://test.test_continue_learning_with_changing_dataset_samples=more_features=more_/predictions.txt"
+    },
+    "test.test_continue_learning_with_changing_dataset[samples=more,features=same]": {
+        "uri": "file://test.test_continue_learning_with_changing_dataset_samples=more_features=same_/predictions.txt"
+    },
+    "test.test_continue_learning_with_changing_dataset[samples=new,features=more]": {
+        "uri": "file://test.test_continue_learning_with_changing_dataset_samples=new_features=more_/predictions.txt"
+    },
+    "test.test_continue_learning_with_changing_dataset[samples=new,features=same]": {
+        "uri": "file://test.test_continue_learning_with_changing_dataset_samples=new_features=same_/predictions.txt"
+    },
+    "test.test_continue_learning_with_changing_dataset[samples=same,features=more]": {
+        "uri": "file://test.test_continue_learning_with_changing_dataset_samples=same_features=more_/predictions.txt"
+    },
+    "test.test_continue_learning_with_changing_params[param_set=iterations,depth,rsm-problem_type=binclass]": [
+        {
+            "uri": "file://test.test_continue_learning_with_changing_params_param_set=iterations_depth_rsm-problem_type=binclass_/predictions_for_boosting_type_Ordered.txt"
+        },
+        {
+            "uri": "file://test.test_continue_learning_with_changing_params_param_set=iterations_depth_rsm-problem_type=binclass_/predictions_for_boosting_type_Plain.txt"
+        }
+    ],
+    "test.test_continue_learning_with_changing_params[param_set=iterations,depth,rsm-problem_type=multiclass]": [
+        {
+            "uri": "file://test.test_continue_learning_with_changing_params_param_set=iterations_depth_rsm-problem_type=multiclass_/predictions_for_boosting_type_Ordered.txt"
+        },
+        {
+            "uri": "file://test.test_continue_learning_with_changing_params_param_set=iterations_depth_rsm-problem_type=multiclass_/predictions_for_boosting_type_Plain.txt"
+        }
+    ],
+    "test.test_continue_learning_with_changing_params[param_set=iterations,depth,rsm-problem_type=ranking]": [
+        {
+            "uri": "file://test.test_continue_learning_with_changing_params_param_set=iterations_depth_rsm-problem_type=ranking_/predictions_for_boosting_type_Plain.txt"
+        }
+    ],
+    "test.test_continue_learning_with_changing_params[param_set=iterations,depth,rsm-problem_type=regression]": [
+        {
+            "uri": "file://test.test_continue_learning_with_changing_params_param_set=iterations_depth_rsm-problem_type=regression_/predictions_for_boosting_type_Ordered.txt"
+        },
+        {
+            "uri": "file://test.test_continue_learning_with_changing_params_param_set=iterations_depth_rsm-problem_type=regression_/predictions_for_boosting_type_Plain.txt"
+        }
+    ],
+    "test.test_continue_learning_with_changing_params[param_set=iterations,learning_rate-problem_type=binclass]": [
+        {
+            "uri": "file://test.test_continue_learning_with_changing_params_param_set=iterations_learning_rate-problem_type=binclass_/predictions_for_boosting_type_Ordered.txt"
+        },
+        {
+            "uri": "file://test.test_continue_learning_with_changing_params_param_set=iterations_learning_rate-problem_type=binclass_/predictions_for_boosting_type_Plain.txt"
+        }
+    ],
+    "test.test_continue_learning_with_changing_params[param_set=iterations,learning_rate-problem_type=multiclass]": [
+        {
+            "uri": "file://test.test_continue_learning_with_changing_params_param_set=iterations_learning_rate-problem_type=multiclass_/predictions_for_boosting_type_Ordered.txt"
+        },
+        {
+            "uri": "file://test.test_continue_learning_with_changing_params_param_set=iterations_learning_rate-problem_type=multiclass_/predictions_for_boosting_type_Plain.txt"
+        }
+    ],
+    "test.test_continue_learning_with_changing_params[param_set=iterations,learning_rate-problem_type=ranking]": [
+        {
+            "uri": "file://test.test_continue_learning_with_changing_params_param_set=iterations_learning_rate-problem_type=ranking_/predictions_for_boosting_type_Plain.txt"
+        }
+    ],
+    "test.test_continue_learning_with_changing_params[param_set=iterations,learning_rate-problem_type=regression]": [
+        {
+            "uri": "file://test.test_continue_learning_with_changing_params_param_set=iterations_learning_rate-problem_type=regression_/predictions_for_boosting_type_Ordered.txt"
+        },
+        {
+            "uri": "file://test.test_continue_learning_with_changing_params_param_set=iterations_learning_rate-problem_type=regression_/predictions_for_boosting_type_Plain.txt"
+        }
+    ],
+    "test.test_convert_model_to_json[CPU-adult-parameters0]": {
+        "uri": "file://test.test_convert_model_to_json_CPU-adult-parameters0_/converted_model.bin"
+    },
+    "test.test_convert_model_to_json[CPU-adult-parameters1]": {
+        "uri": "file://test.test_convert_model_to_json_CPU-adult-parameters1_/converted_model.bin"
+    },
+    "test.test_convert_model_to_json[CPU-higgs-parameters2]": {
+        "uri": "file://test.test_convert_model_to_json_CPU-higgs-parameters2_/converted_model.bin"
+    },
+    "test.test_copy_model": {
+        "uri": "file://test.test_copy_model/model.bin"
+    },
+    "test.test_coreml_cbm_import_export[CPU]": {
+        "uri": "file://test.test_coreml_cbm_import_export_CPU_/model.mlmodel"
+    },
+    "test.test_coreml_import_export[CPU]": {
+        "uri": "file://test.test_coreml_import_export_CPU_/model.mlmodel"
+    },
+    "test.test_coreml_import_export_one_hot_features[CPU]": {
+        "uri": "file://test.test_coreml_import_export_one_hot_features_CPU_/model.mlmodel"
+    },
+    "test.test_cpp_export_no_cat_features[CPU]": {
+        "uri": "file://test.test_cpp_export_no_cat_features_CPU_/model.cpp"
+    },
+    "test.test_cpp_export_with_cat_features[CPU]": {
+        "uri": "file://test.test_cpp_export_with_cat_features_CPU_/model.cpp"
+    },
+    "test.test_ctr_target_border_count[CPU]": {
+        "uri": "file://test.test_ctr_target_border_count_CPU_/model.bin"
+    },
+    "test.test_custom_class_labels[CPU-label_type=boolean-class_count=2-loss_function=Logloss]": [
+        {
+            "uri": "file://test.test_custom_class_labels_CPU-label_type=boolean-class_count=2-loss_function=Logloss_/predictions.txt"
+        },
+        {
+            "uri": "file://test.test_custom_class_labels_CPU-label_type=boolean-class_count=2-loss_function=Logloss_/score.txt"
+        }
+    ],
+    "test.test_custom_class_labels[CPU-label_type=boolean-class_count=2-loss_function=MultiClass]": [
+        {
+            "uri": "file://test.test_custom_class_labels_CPU-label_type=boolean-class_count=2-loss_function=MultiClass_/predictions.txt"
+        },
+        {
+            "uri": "file://test.test_custom_class_labels_CPU-label_type=boolean-class_count=2-loss_function=MultiClass_/score.txt"
+        }
+    ],
+    "test.test_custom_class_labels[CPU-label_type=int-class_count=2-loss_function=Logloss]": [
+        {
+            "uri": "file://test.test_custom_class_labels_CPU-label_type=int-class_count=2-loss_function=Logloss_/predictions.txt"
+        },
+        {
+            "uri": "file://test.test_custom_class_labels_CPU-label_type=int-class_count=2-loss_function=Logloss_/score.txt"
+        }
+    ],
+    "test.test_custom_class_labels[CPU-label_type=int-class_count=2-loss_function=MultiClass]": [
+        {
+            "uri": "file://test.test_custom_class_labels_CPU-label_type=int-class_count=2-loss_function=MultiClass_/predictions.txt"
+        },
+        {
+            "uri": "file://test.test_custom_class_labels_CPU-label_type=int-class_count=2-loss_function=MultiClass_/score.txt"
+        }
+    ],
+    "test.test_custom_class_labels[CPU-label_type=int-class_count=5-loss_function=MultiClass]": [
+        {
+            "uri": "file://test.test_custom_class_labels_CPU-label_type=int-class_count=5-loss_function=MultiClass_/predictions.txt"
+        },
+        {
+            "uri": "file://test.test_custom_class_labels_CPU-label_type=int-class_count=5-loss_function=MultiClass_/score.txt"
+        }
+    ],
+    "test.test_custom_class_labels[CPU-label_type=string-class_count=2-loss_function=Logloss]": [
+        {
+            "uri": "file://test.test_custom_class_labels_CPU-label_type=string-class_count=2-loss_function=Logloss_/predictions.txt"
+        },
+        {
+            "uri": "file://test.test_custom_class_labels_CPU-label_type=string-class_count=2-loss_function=Logloss_/score.txt"
+        }
+    ],
+    "test.test_custom_class_labels[CPU-label_type=string-class_count=2-loss_function=MultiClass]": [
+        {
+            "uri": "file://test.test_custom_class_labels_CPU-label_type=string-class_count=2-loss_function=MultiClass_/predictions.txt"
+        },
+        {
+            "uri": "file://test.test_custom_class_labels_CPU-label_type=string-class_count=2-loss_function=MultiClass_/score.txt"
+        }
+    ],
+    "test.test_custom_class_labels[CPU-label_type=string-class_count=5-loss_function=MultiClass]": [
+        {
+            "uri": "file://test.test_custom_class_labels_CPU-label_type=string-class_count=5-loss_function=MultiClass_/predictions.txt"
+        },
+        {
+            "uri": "file://test.test_custom_class_labels_CPU-label_type=string-class_count=5-loss_function=MultiClass_/score.txt"
+        }
+    ],
+    "test.test_cv[CPU]": {
+        "uri": "file://test.test_cv_CPU_/catboost_training.json"
+    },
+    "test.test_cv_custom_loss[CPU]": {
+        "uri": "file://test.test_cv_custom_loss_CPU_/catboost_training.json"
+    },
+    "test.test_cv_logging[CPU]": {
+        "uri": "file://test.test_cv_logging_CPU_/catboost_training.json"
+    },
+    "test.test_cv_metric_period[CPU]": {
+        "uri": "file://test.test_cv_metric_period_CPU_/catboost_training.json"
+    },
+    "test.test_cv_overfitting_detector[CPU-with_metric_period=False]": {
+        "uri": "file://test.test_cv_overfitting_detector_CPU-with_metric_period=False_/catboost_training.json"
+    },
+    "test.test_cv_overfitting_detector[CPU-with_metric_period=True]": {
+        "uri": "file://test.test_cv_overfitting_detector_CPU-with_metric_period=True_/catboost_training.json"
+    },
+    "test.test_cv_pairs[CPU]": {
+        "uri": "file://test.test_cv_pairs_CPU_/catboost_training.json"
+    },
+    "test.test_cv_pairs_generated[CPU]": {
+        "uri": "file://test.test_cv_pairs_generated_CPU_/catboost_training.json"
+    },
+    "test.test_cv_query[CPU-loss_function=QueryRMSE]": {
+        "uri": "file://test.test_cv_query_CPU-loss_function=QueryRMSE_/catboost_training.json"
+    },
+    "test.test_cv_query[CPU-loss_function=YetiRank]": {
+        "uri": "file://test.test_cv_query_CPU-loss_function=YetiRank_/catboost_training.json"
+    },
+    "test.test_cv_skip_train[CPU]": {
+        "uri": "file://test.test_cv_skip_train_CPU_/catboost_training.json"
+    },
+    "test.test_cv_skip_train_default[CPU]": {
+        "uri": "file://test.test_cv_skip_train_default_CPU_/catboost_training.json"
+    },
+    "test.test_cv_with_ignored_features[CPU-has_missing=False-data_type=integer]": {
+        "uri": "file://test.test_cv_with_ignored_features_CPU-has_missing=False-data_type=integer_/catboost_training.json"
+    },
+    "test.test_cv_with_ignored_features[CPU-has_missing=False-data_type=string]": {
+        "uri": "file://test.test_cv_with_ignored_features_CPU-has_missing=False-data_type=string_/catboost_training.json"
+    },
+    "test.test_cv_with_ignored_features[CPU-has_missing=True-data_type=integer]": {
+        "uri": "file://test.test_cv_with_ignored_features_CPU-has_missing=True-data_type=integer_/catboost_training.json"
+    },
+    "test.test_cv_with_not_binarized_target[CPU]": {
+        "uri": "file://test.test_cv_with_not_binarized_target_CPU_/catboost_training.json"
+    },
+    "test.test_cv_with_text[binclass]": {
+        "uri": "file://test.test_cv_with_text_binclass_/result.csv"
+    },
+    "test.test_cv_with_text[multiclass]": {
+        "uri": "file://test.test_cv_with_text_multiclass_/result.csv"
+    },
+    "test.test_cv_with_text[regression]": {
+        "uri": "file://test.test_cv_with_text_regression_/result.csv"
+    },
+    "test.test_dataframe_with_pandas_categorical_columns[cat_features_specified=True]": {
+        "uri": "file://test.test_dataframe_with_pandas_categorical_columns_cat_features_specified=True_/predictions.txt"
+    },
+    "test.test_diffusion_temperature_with_shrink_mode[0-0-Constant]": {
+        "uri": "file://test.test_diffusion_temperature_with_shrink_mode_0-0-Constant_/predictions.tsv"
+    },
+    "test.test_diffusion_temperature_with_shrink_mode[0-0-Decreasing]": {
+        "uri": "file://test.test_diffusion_temperature_with_shrink_mode_0-0-Decreasing_/predictions.tsv"
+    },
+    "test.test_diffusion_temperature_with_shrink_mode[0-0.2-Constant]": {
+        "uri": "file://test.test_diffusion_temperature_with_shrink_mode_0-0.2-Constant_/predictions.tsv"
+    },
+    "test.test_diffusion_temperature_with_shrink_mode[0-0.2-Decreasing]": {
+        "uri": "file://test.test_diffusion_temperature_with_shrink_mode_0-0.2-Decreasing_/predictions.tsv"
+    },
+    "test.test_diffusion_temperature_with_shrink_mode[1000-0-Constant]": {
+        "uri": "file://test.test_diffusion_temperature_with_shrink_mode_1000-0-Constant_/predictions.tsv"
+    },
+    "test.test_diffusion_temperature_with_shrink_mode[1000-0-Decreasing]": {
+        "uri": "file://test.test_diffusion_temperature_with_shrink_mode_1000-0-Decreasing_/predictions.tsv"
+    },
+    "test.test_diffusion_temperature_with_shrink_mode[1000-0.2-Constant]": {
+        "uri": "file://test.test_diffusion_temperature_with_shrink_mode_1000-0.2-Constant_/predictions.tsv"
+    },
+    "test.test_diffusion_temperature_with_shrink_mode[1000-0.2-Decreasing]": {
+        "uri": "file://test.test_diffusion_temperature_with_shrink_mode_1000-0.2-Decreasing_/predictions.tsv"
+    },
+    "test.test_early_stopping_rounds[CPU]": [
+        {
+            "uri": "file://test.test_early_stopping_rounds_CPU_/catboost_training.json"
+        },
+        {
+            "uri": "file://test.test_early_stopping_rounds_CPU_/json_log_train.json"
+        }
+    ],
+    "test.test_eval_features[CPU-problem=binclass-eval_type=All]": [
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=binclass-eval_type=All_/eval_results_AUC.csv"
+        },
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=binclass-eval_type=All_/eval_results_Logloss.csv"
+        }
+    ],
+    "test.test_eval_features[CPU-problem=binclass-eval_type=SeqAddAndAll]": [
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=binclass-eval_type=SeqAddAndAll_/eval_results_AUC.csv"
+        },
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=binclass-eval_type=SeqAddAndAll_/eval_results_Logloss.csv"
+        }
+    ],
+    "test.test_eval_features[CPU-problem=binclass-eval_type=SeqAdd]": [
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=binclass-eval_type=SeqAdd_/eval_results_AUC.csv"
+        },
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=binclass-eval_type=SeqAdd_/eval_results_Logloss.csv"
+        }
+    ],
+    "test.test_eval_features[CPU-problem=binclass-eval_type=SeqRem]": [
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=binclass-eval_type=SeqRem_/eval_results_AUC.csv"
+        },
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=binclass-eval_type=SeqRem_/eval_results_Logloss.csv"
+        }
+    ],
+    "test.test_eval_features[CPU-problem=multiclass-eval_type=All]": [
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=multiclass-eval_type=All_/eval_results_Accuracy.csv"
+        },
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=multiclass-eval_type=All_/eval_results_MultiClass.csv"
+        }
+    ],
+    "test.test_eval_features[CPU-problem=multiclass-eval_type=SeqAddAndAll]": [
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=multiclass-eval_type=SeqAddAndAll_/eval_results_Accuracy.csv"
+        },
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=multiclass-eval_type=SeqAddAndAll_/eval_results_MultiClass.csv"
+        }
+    ],
+    "test.test_eval_features[CPU-problem=multiclass-eval_type=SeqAdd]": [
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=multiclass-eval_type=SeqAdd_/eval_results_Accuracy.csv"
+        },
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=multiclass-eval_type=SeqAdd_/eval_results_MultiClass.csv"
+        }
+    ],
+    "test.test_eval_features[CPU-problem=multiclass-eval_type=SeqRem]": [
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=multiclass-eval_type=SeqRem_/eval_results_Accuracy.csv"
+        },
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=multiclass-eval_type=SeqRem_/eval_results_MultiClass.csv"
+        }
+    ],
+    "test.test_eval_features[CPU-problem=ranking-eval_type=All]": [
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=ranking-eval_type=All_/eval_results_NDCG_type=Base.csv"
+        },
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=ranking-eval_type=All_/eval_results_QueryRMSE.csv"
+        }
+    ],
+    "test.test_eval_features[CPU-problem=ranking-eval_type=SeqAddAndAll]": [
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=ranking-eval_type=SeqAddAndAll_/eval_results_NDCG_type=Base.csv"
+        },
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=ranking-eval_type=SeqAddAndAll_/eval_results_QueryRMSE.csv"
+        }
+    ],
+    "test.test_eval_features[CPU-problem=ranking-eval_type=SeqAdd]": [
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=ranking-eval_type=SeqAdd_/eval_results_NDCG_type=Base.csv"
+        },
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=ranking-eval_type=SeqAdd_/eval_results_QueryRMSE.csv"
+        }
+    ],
+    "test.test_eval_features[CPU-problem=ranking-eval_type=SeqRem]": [
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=ranking-eval_type=SeqRem_/eval_results_NDCG_type=Base.csv"
+        },
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=ranking-eval_type=SeqRem_/eval_results_QueryRMSE.csv"
+        }
+    ],
+    "test.test_eval_features[CPU-problem=regression-eval_type=All]": [
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=regression-eval_type=All_/eval_results_RMSE.csv"
+        }
+    ],
+    "test.test_eval_features[CPU-problem=regression-eval_type=SeqAddAndAll]": [
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=regression-eval_type=SeqAddAndAll_/eval_results_RMSE.csv"
+        }
+    ],
+    "test.test_eval_features[CPU-problem=regression-eval_type=SeqAdd]": [
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=regression-eval_type=SeqAdd_/eval_results_RMSE.csv"
+        }
+    ],
+    "test.test_eval_features[CPU-problem=regression-eval_type=SeqRem]": [
+        {
+            "uri": "file://test.test_eval_features_CPU-problem=regression-eval_type=SeqRem_/eval_results_RMSE.csv"
+        }
+    ],
+    "test.test_eval_features_with_file_header": {
+        "uri": "file://test.test_eval_features_with_file_header/eval_results.csv"
+    },
+    "test.test_eval_fraction_on_ndarray[with_cat_features=False-estimator_type=classifier]": {
+        "uri": "file://test.test_eval_fraction_on_ndarray_with_cat_features=False-estimator_type=classifier_/predictions.txt"
+    },
+    "test.test_eval_fraction_on_ndarray[with_cat_features=False-estimator_type=regressor]": {
+        "uri": "file://test.test_eval_fraction_on_ndarray_with_cat_features=False-estimator_type=regressor_/predictions.txt"
+    },
+    "test.test_eval_fraction_on_ndarray[with_cat_features=True-estimator_type=classifier]": {
+        "uri": "file://test.test_eval_fraction_on_ndarray_with_cat_features=True-estimator_type=classifier_/predictions.txt"
+    },
+    "test.test_eval_fraction_on_ndarray[with_cat_features=True-estimator_type=regressor]": {
+        "uri": "file://test.test_eval_fraction_on_ndarray_with_cat_features=True-estimator_type=regressor_/predictions.txt"
+    },
+    "test.test_eval_fraction_on_pool[with_cat_features=False-estimator_type=classifier]": {
+        "uri": "file://test.test_eval_fraction_on_pool_with_cat_features=False-estimator_type=classifier_/predictions.txt"
+    },
+    "test.test_eval_fraction_on_pool[with_cat_features=False-estimator_type=regressor]": {
+        "uri": "file://test.test_eval_fraction_on_pool_with_cat_features=False-estimator_type=regressor_/predictions.txt"
+    },
+    "test.test_eval_fraction_on_pool[with_cat_features=True-estimator_type=classifier]": {
+        "uri": "file://test.test_eval_fraction_on_pool_with_cat_features=True-estimator_type=classifier_/predictions.txt"
+    },
+    "test.test_eval_fraction_on_pool[with_cat_features=True-estimator_type=regressor]": {
+        "uri": "file://test.test_eval_fraction_on_pool_with_cat_features=True-estimator_type=regressor_/predictions.txt"
+    },
+    "test.test_eval_period_size": [
+        {
+            "uri": "file://test.test_eval_period_size/eval_metrics_all_trees.txt"
+        },
+        {
+            "uri": "file://test.test_eval_period_size/eval_metrics_begin_end.txt"
+        }
+    ],
+    "test.test_eval_set[CPU]": {
+        "uri": "file://test.test_eval_set_CPU_/catboost_training.json"
+    },
+    "test.test_eval_set_with_no_target[CPU]": {
+        "uri": "file://test.test_eval_set_with_no_target_CPU_/evals.txt"
+    },
+    "test.test_exact_shap_feature_importance[CPU]": {
+        "uri": "file://test.test_exact_shap_feature_importance_CPU_/feature_importance.npy"
+    },
+    "test.test_exact_shap_feature_importance_multiclass[CPU]": {
+        "uri": "file://test.test_exact_shap_feature_importance_multiclass_CPU_/feature_importance.npy"
+    },
+    "test.test_exact_shap_feature_importance_multirmse[CPU]": {
+        "uri": "file://test.test_exact_shap_feature_importance_multirmse_CPU_/feature_importance.npy"
+    },
+    "test.test_exact_shap_feature_importance_ranking[CPU]": {
+        "uri": "file://test.test_exact_shap_feature_importance_ranking_CPU_/feature_importance.npy"
+    },
+    "test.test_exact_shap_feature_importance_with_langevin": {
+        "uri": "file://test.test_exact_shap_feature_importance_with_langevin/feature_importance.npy"
+    },
+    "test.test_export_to_python_no_cat_features[CPU-2]": {
+        "uri": "file://test.test_export_to_python_no_cat_features_CPU-2_/model.py"
+    },
+    "test.test_export_to_python_no_cat_features[CPU-40]": {
+        "uri": "file://test.test_export_to_python_no_cat_features_CPU-40_/model.py"
+    },
+    "test.test_export_to_python_with_cat_features[CPU-2]": {
+        "uri": "file://test.test_export_to_python_with_cat_features_CPU-2_/model.py"
+    },
+    "test.test_export_to_python_with_cat_features[CPU-40]": {
+        "uri": "file://test.test_export_to_python_with_cat_features_CPU-40_/model.py"
+    },
+    "test.test_export_to_python_with_cat_features_from_pandas[CPU]": {
+        "uri": "file://test.test_export_to_python_with_cat_features_from_pandas_CPU_/model.py"
+    },
+    "test.test_feature_importance[CPU]": {
+        "uri": "file://test.test_feature_importance_CPU_/feature_importance.npy"
+    },
+    "test.test_feature_importance_asymmetric_prediction_value_change[CPU-Depthwise]": {
+        "uri": "file://test.test_feature_importance_asymmetric_prediction_value_change_CPU-Depthwise_/feature_importance.npy"
+    },
+    "test.test_feature_importance_asymmetric_prediction_value_change[CPU-Lossguide]": {
+        "uri": "file://test.test_feature_importance_asymmetric_prediction_value_change_CPU-Lossguide_/feature_importance.npy"
+    },
+    "test.test_feature_importance_explicit[CPU]": {
+        "uri": "file://test.test_feature_importance_explicit_CPU_/feature_importance.npy"
+    },
+    "test.test_feature_importance_prettified[CPU]": {
+        "uri": "file://test.test_feature_importance_prettified_CPU_/feature_importance.txt"
+    },
+    "test.test_feature_importance_sage_all_feature_types": {
+        "uri": "file://test.test_feature_importance_sage_all_feature_types/feature_importance.npy"
+    },
+    "test.test_feature_importance_sage_basic": {
+        "uri": "file://test.test_feature_importance_sage_basic/feature_importance.npy"
+    },
+    "test.test_feature_importance_sage_querywise": {
+        "uri": "file://test.test_feature_importance_sage_querywise/feature_importance.npy"
+    },
+    "test.test_feature_names_from_model": {
+        "uri": "file://test.test_feature_names_from_model/feature_names"
+    },
+    "test.test_fit_and_predict_on_sliced_pools[CPU]": {
+        "uri": "file://test.test_fit_and_predict_on_sliced_pools_CPU_/predictions.npy"
+    },
+    "test.test_fit_data[CPU]": {
+        "uri": "file://test.test_fit_data_CPU_/predictions.npy"
+    },
+    "test.test_fit_on_ndarray[features_dtype=float32]": {
+        "uri": "file://test.test_fit_on_ndarray_features_dtype=float32_/predictions.txt"
+    },
+    "test.test_fit_on_ndarray[features_dtype=float64]": {
+        "uri": "file://test.test_fit_on_ndarray_features_dtype=float64_/predictions.txt"
+    },
+    "test.test_fit_on_ndarray[features_dtype=int16]": {
+        "uri": "file://test.test_fit_on_ndarray_features_dtype=int16_/predictions.txt"
+    },
+    "test.test_fit_on_ndarray[features_dtype=int32]": {
+        "uri": "file://test.test_fit_on_ndarray_features_dtype=int32_/predictions.txt"
+    },
+    "test.test_fit_on_ndarray[features_dtype=int64]": {
+        "uri": "file://test.test_fit_on_ndarray_features_dtype=int64_/predictions.txt"
+    },
+    "test.test_fit_on_ndarray[features_dtype=int8]": {
+        "uri": "file://test.test_fit_on_ndarray_features_dtype=int8_/predictions.txt"
+    },
+    "test.test_fit_on_ndarray[features_dtype=uint16]": {
+        "uri": "file://test.test_fit_on_ndarray_features_dtype=uint16_/predictions.txt"
+    },
+    "test.test_fit_on_ndarray[features_dtype=uint32]": {
+        "uri": "file://test.test_fit_on_ndarray_features_dtype=uint32_/predictions.txt"
+    },
+    "test.test_fit_on_ndarray[features_dtype=uint64]": {
+        "uri": "file://test.test_fit_on_ndarray_features_dtype=uint64_/predictions.txt"
+    },
+    "test.test_fit_on_ndarray[features_dtype=uint8]": {
+        "uri": "file://test.test_fit_on_ndarray_features_dtype=uint8_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.1-features_dtype=float32]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.1-features_dtype=float32_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.1-features_dtype=float64]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.1-features_dtype=float64_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.1-features_dtype=int16]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.1-features_dtype=int16_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.1-features_dtype=int32]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.1-features_dtype=int32_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.1-features_dtype=int64]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.1-features_dtype=int64_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.1-features_dtype=int8]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.1-features_dtype=int8_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.1-features_dtype=uint16]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.1-features_dtype=uint16_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.1-features_dtype=uint32]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.1-features_dtype=uint32_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.1-features_dtype=uint64]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.1-features_dtype=uint64_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.1-features_dtype=uint8]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.1-features_dtype=uint8_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.2-features_dtype=float32]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.2-features_dtype=float32_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.2-features_dtype=float64]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.2-features_dtype=float64_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.2-features_dtype=int16]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.2-features_dtype=int16_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.2-features_dtype=int32]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.2-features_dtype=int32_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.2-features_dtype=int64]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.2-features_dtype=int64_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.2-features_dtype=int8]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.2-features_dtype=int8_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.2-features_dtype=uint16]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.2-features_dtype=uint16_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.2-features_dtype=uint32]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.2-features_dtype=uint32_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.2-features_dtype=uint64]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.2-features_dtype=uint64_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.2-features_dtype=uint8]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.2-features_dtype=uint8_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.8-features_dtype=float32]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.8-features_dtype=float32_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.8-features_dtype=float64]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.8-features_dtype=float64_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.8-features_dtype=int16]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.8-features_dtype=int16_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.8-features_dtype=int32]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.8-features_dtype=int32_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.8-features_dtype=int64]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.8-features_dtype=int64_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.8-features_dtype=int8]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.8-features_dtype=int8_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.8-features_dtype=uint16]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.8-features_dtype=uint16_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.8-features_dtype=uint32]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.8-features_dtype=uint32_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.8-features_dtype=uint64]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.8-features_dtype=uint64_/predictions.txt"
+    },
+    "test.test_fit_on_scipy_sparse_spmatrix[features_density=0.8-features_dtype=uint8]": {
+        "uri": "file://test.test_fit_on_scipy_sparse_spmatrix_features_density=0.8-features_dtype=uint8_/predictions.txt"
+    },
+    "test.test_fit_predict_baseline[CPU]": {
+        "uri": "file://test.test_fit_predict_baseline_CPU_/predictions.npy"
+    },
+    "test.test_full_history[CPU]": {
+        "uri": "file://test.test_full_history_CPU_/model.bin"
+    },
+    "test.test_get_all_params": {
+        "uri": "file://test.test_get_all_params/options.json"
+    },
+    "test.test_get_evals_result_without_eval_set": {
+        "uri": "file://test.test_get_evals_result_without_eval_set/evals.txt"
+    },
+    "test.test_get_metric_evals[CPU]": {
+        "uri": "file://test.test_get_metric_evals_CPU_/evals.txt"
+    },
+    "test.test_grow_policy_restriction[CPU-Depthwise]": {
+        "uri": "file://test.test_grow_policy_restriction_CPU-Depthwise_/predictions.npy"
+    },
+    "test.test_grow_policy_restriction[CPU-Lossguide]": {
+        "uri": "file://test.test_grow_policy_restriction_CPU-Lossguide_/predictions.npy"
+    },
+    "test.test_ignored_features[CPU]": {
+        "uri": "file://test.test_ignored_features_CPU_/model.bin"
+    },
+    "test.test_ignored_features_names[CPU]": {
+        "uri": "file://test.test_ignored_features_names_CPU_/model.bin"
+    },
+    "test.test_interaction_feature_importance[CPU]": {
+        "uri": "file://test.test_interaction_feature_importance_CPU_/feature_importance.npy"
+    },
+    "test.test_learning_rate_auto_set[CPU]": {
+        "uri": "file://test.test_learning_rate_auto_set_CPU_/catboost_training.json"
+    },
+    "test.test_learning_rate_auto_set_in_cv[CPU]": {
+        "uri": "file://test.test_learning_rate_auto_set_in_cv_CPU_/catboost_training.json"
+    },
+    "test.test_load_and_save_quantization_borders": [
+        {
+            "uri": "file://test.test_load_and_save_quantization_borders/borders_32.dat"
+        },
+        {
+            "uri": "file://test.test_load_and_save_quantization_borders/borders_10.dat"
+        }
+    ],
+    "test.test_loss_function_change_asymmetric[CPU-Depthwise]": {
+        "uri": "file://test.test_loss_function_change_asymmetric_CPU-Depthwise_/feature_importance.npy"
+    },
+    "test.test_loss_function_change_asymmetric[CPU-Lossguide]": {
+        "uri": "file://test.test_loss_function_change_asymmetric_CPU-Lossguide_/feature_importance.npy"
+    },
+    "test.test_metadata": {
+        "uri": "file://test.test_metadata/model.bin"
+    },
+    "test.test_multiclass[CPU]": {
+        "uri": "file://test.test_multiclass_CPU_/predictions.npy"
+    },
+    "test.test_multiclass_classes_count[CPU-missed_classes=False]": [
+        {
+            "uri": "file://test.test_multiclass_classes_count_CPU-missed_classes=False_/predictions.txt"
+        },
+        {
+            "uri": "file://test.test_multiclass_classes_count_CPU-missed_classes=False_/model.bin"
+        }
+    ],
+    "test.test_multiclass_classes_count[CPU-missed_classes=True]": [
+        {
+            "uri": "file://test.test_multiclass_classes_count_CPU-missed_classes=True_/predictions.txt"
+        },
+        {
+            "uri": "file://test.test_multiclass_classes_count_CPU-missed_classes=True_/model.bin"
+        }
+    ],
+    "test.test_multiclass_custom_class_labels_from_files[CPU]": {
+        "uri": "file://test.test_multiclass_custom_class_labels_from_files_CPU_/predictions.txt"
+    },
+    "test.test_multiclass_grow_policy[CPU-Depthwise]": {
+        "uri": "file://test.test_multiclass_grow_policy_CPU-Depthwise_/learn_error.txt"
+    },
+    "test.test_multiclass_grow_policy[CPU-Lossguide]": {
+        "uri": "file://test.test_multiclass_grow_policy_CPU-Lossguide_/learn_error.txt"
+    },
+    "test.test_multilabel[Class]": {
+        "uri": "file://test.test_multilabel_Class_/predictions.npy"
+    },
+    "test.test_multilabel[Probability]": {
+        "uri": "file://test.test_multilabel_Probability_/predictions.npy"
+    },
+    "test.test_multilabel[RawFormulaVal]": {
+        "uri": "file://test.test_multilabel_RawFormulaVal_/predictions.npy"
+    },
+    "test.test_multiregression[100]": {
+        "uri": "file://test.test_multiregression_100_/predictions.txt"
+    },
+    "test.test_multiregression[500]": {
+        "uri": "file://test.test_multiregression_500_/predictions.txt"
+    },
+    "test.test_non_ones_weight[CPU]": {
+        "uri": "file://test.test_non_ones_weight_CPU_/model.bin"
+    },
+    "test.test_ntree_limit[CPU]": {
+        "uri": "file://test.test_ntree_limit_CPU_/predictions.npy"
+    },
+    "test.test_object_importances[CPU]": {
+        "uri": "file://test.test_object_importances_CPU_/object_importances.txt"
+    },
+    "test.test_od[CPU]": {
+        "uri": "file://test.test_od_CPU_/model.bin"
+    },
+    "test.test_ones_weight[CPU]": {
+        "uri": "file://test.test_ones_weight_CPU_/model.bin"
+    },
+    "test.test_onnx_export[problem_type=binclass-boost_from_average=False]": {
+        "uri": "file://test.test_onnx_export_problem_type=binclass-boost_from_average=False_/model.onnx"
+    },
+    "test.test_onnx_export[problem_type=binclass-boost_from_average=True]": {
+        "uri": "file://test.test_onnx_export_problem_type=binclass-boost_from_average=True_/model.onnx"
+    },
+    "test.test_onnx_export[problem_type=multiclass-boost_from_average=False]": {
+        "uri": "file://test.test_onnx_export_problem_type=multiclass-boost_from_average=False_/model.onnx"
+    },
+    "test.test_onnx_export[problem_type=regression-boost_from_average=False]": {
+        "uri": "file://test.test_onnx_export_problem_type=regression-boost_from_average=False_/model.onnx"
+    },
+    "test.test_onnx_export[problem_type=regression-boost_from_average=True]": {
+        "uri": "file://test.test_onnx_export_problem_type=regression-boost_from_average=True_/model.onnx"
+    },
+    "test.test_pairs_generation[CPU]": {
+        "uri": "file://test.test_pairs_generation_CPU_/catboost_training.json"
+    },
+    "test.test_pairs_generation_with_max_pairs[CPU]": {
+        "uri": "file://test.test_pairs_generation_with_max_pairs_CPU_/catboost_training.json"
+    },
+    "test.test_pairs_without_groupid": {
+        "uri": "file://test.test_pairs_without_groupid/catboost_training.json"
+    },
+    "test.test_partial_dependence[features0]": {
+        "uri": "file://test.test_partial_dependence_features0_/feature_importance.txt"
+    },
+    "test.test_partial_dependence[features1]": {
+        "uri": "file://test.test_partial_dependence_features1_/feature_importance.txt"
+    },
+    "test.test_pmml_export[binclass]": {
+        "uri": "file://test.test_pmml_export_binclass_/model.pmml"
+    },
+    "test.test_pmml_export[regression]": {
+        "uri": "file://test.test_pmml_export_regression_/model.pmml"
+    },
+    "test.test_pool_set_timestamp[CPU]": {
+        "uri": "file://test.test_pool_set_timestamp_CPU_/model.bin"
+    },
+    "test.test_pool_with_timestamp[CPU]": {
+        "uri": "file://test.test_pool_with_timestamp_CPU_/model.bin"
+    },
+    "test.test_predict_class[CPU]": {
+        "uri": "file://test.test_predict_class_CPU_/predictions.npy"
+    },
+    "test.test_predict_class_proba[CPU]": {
+        "uri": "file://test.test_predict_class_proba_CPU_/predictions.npy"
+    },
+    "test.test_predict_class_raw[CPU]": {
+        "uri": "file://test.test_predict_class_raw_CPU_/predictions.npy"
+    },
+    "test.test_predict_regress[CPU]": {
+        "uri": "file://test.test_predict_regress_CPU_/model.bin"
+    },
+    "test.test_predict_sklearn_class[CPU]": {
+        "uri": "file://test.test_predict_sklearn_class_CPU_/model.bin"
+    },
+    "test.test_predict_sklearn_regress[CPU]": {
+        "uri": "file://test.test_predict_sklearn_regress_CPU_/model.bin"
+    },
+    "test.test_prediction_diff_feature_importance[CPU]": {
+        "uri": "file://test.test_prediction_diff_feature_importance_CPU_/feature_importance.npy"
+    },
+    "test.test_prediction_diff_nonsym_feature_importance[CPU-Depthwise]": {
+        "uri": "file://test.test_prediction_diff_nonsym_feature_importance_CPU-Depthwise_/feature_importance.txt"
+    },
+    "test.test_prediction_diff_nonsym_feature_importance[CPU-Lossguide]": {
+        "uri": "file://test.test_prediction_diff_nonsym_feature_importance_CPU-Lossguide_/feature_importance.txt"
+    },
+    "test.test_prediction_plot": {
+        "uri": "file://test.test_prediction_plot/predictions.json"
+    },
+    "test.test_priors[CPU]": {
+        "uri": "file://test.test_priors_CPU_/model.bin"
+    },
+    "test.test_quantized_pool_cv[adult]": {
+        "uri": "file://test.test_quantized_pool_cv_adult_/result.csv"
+    },
+    "test.test_quantized_pool_cv[higgs]": {
+        "uri": "file://test.test_quantized_pool_cv_higgs_/result.csv"
+    },
+    "test.test_quantized_pool_cv[querywise]": {
+        "uri": "file://test.test_quantized_pool_cv_querywise_/result.csv"
+    },
+    "test.test_regress_with_per_float_feature_binarization_param[CPU]": {
+        "uri": "file://test.test_regress_with_per_float_feature_binarization_param_CPU_/model.bin"
+    },
+    "test.test_regression_ctr[CPU]": {
+        "uri": "file://test.test_regression_ctr_CPU_/model.bin"
+    },
+    "test.test_roc[CPU-iterations=110]": [
+        {
+            "uri": "file://test.test_roc_CPU-iterations=110_/roc"
+        },
+        {
+            "uri": "file://test.test_roc_CPU-iterations=110_/bounds"
+        }
+    ],
+    "test.test_roc[CPU-iterations=20]": [
+        {
+            "uri": "file://test.test_roc_CPU-iterations=20_/roc"
+        },
+        {
+            "uri": "file://test.test_roc_CPU-iterations=20_/bounds"
+        }
+    ],
+    "test.test_roc[CPU-iterations=5]": [
+        {
+            "uri": "file://test.test_roc_CPU-iterations=5_/roc"
+        },
+        {
+            "uri": "file://test.test_roc_CPU-iterations=5_/bounds"
+        }
+    ],
+    "test.test_roc_cv[CPU]": [
+        {
+            "uri": "file://test.test_roc_cv_CPU_/out_roc"
+        }
+    ],
+    "test.test_roc_with_target_border": [
+        {
+            "uri": "file://test.test_roc_with_target_border/roc"
+        },
+        {
+            "uri": "file://test.test_roc_with_target_border/bounds"
+        }
+    ],
+    "test.test_sample_gaussian_process[random_score_type=Gumbel]": [
+        {
+            "uri": "file://test.test_sample_gaussian_process_random_score_type=Gumbel_/model_0.cbm"
+        },
+        {
+            "uri": "file://test.test_sample_gaussian_process_random_score_type=Gumbel_/model_1.cbm"
+        },
+        {
+            "uri": "file://test.test_sample_gaussian_process_random_score_type=Gumbel_/model_2.cbm"
+        },
+        {
+            "uri": "file://test.test_sample_gaussian_process_random_score_type=Gumbel_/model_3.cbm"
+        },
+        {
+            "uri": "file://test.test_sample_gaussian_process_random_score_type=Gumbel_/model_4.cbm"
+        },
+        {
+            "uri": "file://test.test_sample_gaussian_process_random_score_type=Gumbel_/model_5.cbm"
+        },
+        {
+            "uri": "file://test.test_sample_gaussian_process_random_score_type=Gumbel_/model_6.cbm"
+        },
+        {
+            "uri": "file://test.test_sample_gaussian_process_random_score_type=Gumbel_/model_7.cbm"
+        },
+        {
+            "uri": "file://test.test_sample_gaussian_process_random_score_type=Gumbel_/model_8.cbm"
+        },
+        {
+            "uri": "file://test.test_sample_gaussian_process_random_score_type=Gumbel_/model_9.cbm"
+        }
+    ],
+    "test.test_sample_gaussian_process[random_score_type=NormalWithModelSizeDecrease]": [
+        {
+            "uri": "file://test.test_sample_gaussian_process_random_score_type=NormalWithModelSizeDecrease_/model_0.cbm"
+        },
+        {
+            "uri": "file://test.test_sample_gaussian_process_random_score_type=NormalWithModelSizeDecrease_/model_1.cbm"
+        },
+        {
+            "uri": "file://test.test_sample_gaussian_process_random_score_type=NormalWithModelSizeDecrease_/model_2.cbm"
+        },
+        {
+            "uri": "file://test.test_sample_gaussian_process_random_score_type=NormalWithModelSizeDecrease_/model_3.cbm"
+        },
+        {
+            "uri": "file://test.test_sample_gaussian_process_random_score_type=NormalWithModelSizeDecrease_/model_4.cbm"
+        },
+        {
+            "uri": "file://test.test_sample_gaussian_process_random_score_type=NormalWithModelSizeDecrease_/model_5.cbm"
+        },
+        {
+            "uri": "file://test.test_sample_gaussian_process_random_score_type=NormalWithModelSizeDecrease_/model_6.cbm"
+        },
+        {
+            "uri": "file://test.test_sample_gaussian_process_random_score_type=NormalWithModelSizeDecrease_/model_7.cbm"
+        },
+        {
+            "uri": "file://test.test_sample_gaussian_process_random_score_type=NormalWithModelSizeDecrease_/model_8.cbm"
+        },
+        {
+            "uri": "file://test.test_sample_gaussian_process_random_score_type=NormalWithModelSizeDecrease_/model_9.cbm"
+        }
+    ],
+    "test.test_save_border_file": [
+        {
+            "uri": "file://test.test_save_border_file/save_borders_file.dat"
+        },
+        {
+            "uri": "file://test.test_save_border_file/output_borders_file.dat"
+        }
+    ],
+    "test.test_select_features_by_multi_feature_tags[CPU-algorithm=RecursiveByLossFunctionChange-train_final_model=False]": {
+        "uri": "file://test.test_select_features_by_multi_feature_tags_CPU-algorithm=RecursiveByLossFunctionChange-train_final_model=False_/summary.json"
+    },
+    "test.test_select_features_by_multi_feature_tags[CPU-algorithm=RecursiveByLossFunctionChange-train_final_model=True]": {
+        "uri": "file://test.test_select_features_by_multi_feature_tags_CPU-algorithm=RecursiveByLossFunctionChange-train_final_model=True_/summary.json"
+    },
+    "test.test_select_features_by_multi_feature_tags[CPU-algorithm=RecursiveByPredictionValuesChange-train_final_model=False]": {
+        "uri": "file://test.test_select_features_by_multi_feature_tags_CPU-algorithm=RecursiveByPredictionValuesChange-train_final_model=False_/summary.json"
+    },
+    "test.test_select_features_by_multi_feature_tags[CPU-algorithm=RecursiveByPredictionValuesChange-train_final_model=True]": {
+        "uri": "file://test.test_select_features_by_multi_feature_tags_CPU-algorithm=RecursiveByPredictionValuesChange-train_final_model=True_/summary.json"
+    },
+    "test.test_select_features_by_multi_feature_tags[CPU-algorithm=RecursiveByShapValues-train_final_model=False]": {
+        "uri": "file://test.test_select_features_by_multi_feature_tags_CPU-algorithm=RecursiveByShapValues-train_final_model=False_/summary.json"
+    },
+    "test.test_select_features_by_multi_feature_tags[CPU-algorithm=RecursiveByShapValues-train_final_model=True]": {
+        "uri": "file://test.test_select_features_by_multi_feature_tags_CPU-algorithm=RecursiveByShapValues-train_final_model=True_/summary.json"
+    },
+    "test.test_shap[CPU]": {
+        "uri": "file://test.test_shap_CPU_/feature_importance.txt"
+    },
+    "test.test_shap_complex_ctr[CPU-IndependentTreeSHAP]": {
+        "uri": "file://test.test_shap_complex_ctr_CPU-IndependentTreeSHAP_/feature_importance.txt"
+    },
+    "test.test_shap_complex_ctr[CPU-TreeSHAP]": {
+        "uri": "file://test.test_shap_complex_ctr_CPU-TreeSHAP_/feature_importance.txt"
+    },
+    "test.test_shap_feature_importance[CPU-IndependentTreeSHAP]": {
+        "uri": "file://test.test_shap_feature_importance_CPU-IndependentTreeSHAP_/feature_importance.npy"
+    },
+    "test.test_shap_feature_importance[CPU-TreeSHAP]": {
+        "uri": "file://test.test_shap_feature_importance_CPU-TreeSHAP_/feature_importance.npy"
+    },
+    "test.test_shap_feature_importance_asymmetric[CPU-Depthwise]": {
+        "uri": "file://test.test_shap_feature_importance_asymmetric_CPU-Depthwise_/feature_importance.npy"
+    },
+    "test.test_shap_feature_importance_asymmetric[CPU-Lossguide]": {
+        "uri": "file://test.test_shap_feature_importance_asymmetric_CPU-Lossguide_/feature_importance.npy"
+    },
+    "test.test_shap_feature_importance_multiclass[CPU-IndependentTreeSHAP]": {
+        "uri": "file://test.test_shap_feature_importance_multiclass_CPU-IndependentTreeSHAP_/feature_importance.npy"
+    },
+    "test.test_shap_feature_importance_multiclass[CPU-TreeSHAP]": {
+        "uri": "file://test.test_shap_feature_importance_multiclass_CPU-TreeSHAP_/feature_importance.npy"
+    },
+    "test.test_shap_feature_importance_multirmse[CPU-IndependentTreeSHAP]": {
+        "uri": "file://test.test_shap_feature_importance_multirmse_CPU-IndependentTreeSHAP_/feature_importance.npy"
+    },
+    "test.test_shap_feature_importance_multirmse[CPU-TreeSHAP]": {
+        "uri": "file://test.test_shap_feature_importance_multirmse_CPU-TreeSHAP_/feature_importance.npy"
+    },
+    "test.test_shap_feature_importance_ranking[CPU]": {
+        "uri": "file://test.test_shap_feature_importance_ranking_CPU_/feature_importance.npy"
+    },
+    "test.test_shap_feature_importance_with_langevin[IndependentTreeSHAP]": {
+        "uri": "file://test.test_shap_feature_importance_with_langevin_IndependentTreeSHAP_/feature_importance.npy"
+    },
+    "test.test_shap_feature_importance_with_langevin[TreeSHAP]": {
+        "uri": "file://test.test_shap_feature_importance_with_langevin_TreeSHAP_/feature_importance.npy"
+    },
+    "test.test_shap_interaction_feature_importance[CPU]": {
+        "uri": "file://test.test_shap_interaction_feature_importance_CPU_/feature_importance.npy"
+    },
+    "test.test_shap_interaction_feature_importance_multiclass[CPU]": {
+        "uri": "file://test.test_shap_interaction_feature_importance_multiclass_CPU_/feature_importance.npy"
+    },
+    "test.test_shap_multiclass[CPU]": {
+        "uri": "file://test.test_shap_multiclass_CPU_/feature_importance.txt"
+    },
+    "test.test_sparse_input_with_categorical_features_with_default_value_present_only_in_eval": {
+        "uri": "file://test.test_sparse_input_with_categorical_features_with_default_value_present_only_in_eval/predictions.txt"
+    },
+    "test.test_staged_predict[CPU]": {
+        "uri": "file://test.test_staged_predict_CPU_/predictions.npy"
+    },
+    "test.test_text_processing_dictionary": {
+        "uri": "file://test.test_text_processing_dictionary/dictionary.tsv"
+    },
+    "test.test_train_with_embedding_features[classification]": {
+        "uri": "file://test.test_train_with_embedding_features_classification_/predictions.txt"
+    },
+    "test.test_train_with_embedding_features[ranking]": {
+        "uri": "file://test.test_train_with_embedding_features_ranking_/predictions.txt"
+    },
+    "test.test_train_with_embedding_features[regression]": {
+        "uri": "file://test.test_train_with_embedding_features_regression_/predictions.txt"
+    },
+    "test.test_uncertainty_prediction_types[Logloss-TotalUncertainty-1]": {
+        "uri": "file://test.test_uncertainty_prediction_types_Logloss-TotalUncertainty-1_/predictions.txt"
+    },
+    "test.test_uncertainty_prediction_types[Logloss-TotalUncertainty-5]": {
+        "uri": "file://test.test_uncertainty_prediction_types_Logloss-TotalUncertainty-5_/predictions.txt"
+    },
+    "test.test_uncertainty_prediction_types[Logloss-VirtEnsembles-1]": {
+        "uri": "file://test.test_uncertainty_prediction_types_Logloss-VirtEnsembles-1_/predictions.txt"
+    },
+    "test.test_uncertainty_prediction_types[Logloss-VirtEnsembles-5]": {
+        "uri": "file://test.test_uncertainty_prediction_types_Logloss-VirtEnsembles-5_/predictions.txt"
+    },
+    "test.test_uncertainty_prediction_types[MultiClass-TotalUncertainty-1]": {
+        "uri": "file://test.test_uncertainty_prediction_types_MultiClass-TotalUncertainty-1_/predictions.txt"
+    },
+    "test.test_uncertainty_prediction_types[MultiClass-TotalUncertainty-5]": {
+        "uri": "file://test.test_uncertainty_prediction_types_MultiClass-TotalUncertainty-5_/predictions.txt"
+    },
+    "test.test_uncertainty_prediction_types[MultiClass-VirtEnsembles-1]": {
+        "uri": "file://test.test_uncertainty_prediction_types_MultiClass-VirtEnsembles-1_/predictions.txt"
+    },
+    "test.test_uncertainty_prediction_types[MultiClass-VirtEnsembles-5]": {
+        "uri": "file://test.test_uncertainty_prediction_types_MultiClass-VirtEnsembles-5_/predictions.txt"
+    },
+    "test.test_uncertainty_prediction_types[RMSE-TotalUncertainty-1]": {
+        "uri": "file://test.test_uncertainty_prediction_types_RMSE-TotalUncertainty-1_/predictions.txt"
+    },
+    "test.test_uncertainty_prediction_types[RMSE-TotalUncertainty-5]": {
+        "uri": "file://test.test_uncertainty_prediction_types_RMSE-TotalUncertainty-5_/predictions.txt"
+    },
+    "test.test_uncertainty_prediction_types[RMSE-VirtEnsembles-1]": {
+        "uri": "file://test.test_uncertainty_prediction_types_RMSE-VirtEnsembles-1_/predictions.txt"
+    },
+    "test.test_uncertainty_prediction_types[RMSE-VirtEnsembles-5]": {
+        "uri": "file://test.test_uncertainty_prediction_types_RMSE-VirtEnsembles-5_/predictions.txt"
+    },
+    "test.test_uncertainty_prediction_types[RMSEWithUncertainty-TotalUncertainty-1]": {
+        "uri": "file://test.test_uncertainty_prediction_types_RMSEWithUncertainty-TotalUncertainty-1_/predictions.txt"
+    },
+    "test.test_uncertainty_prediction_types[RMSEWithUncertainty-TotalUncertainty-5]": {
+        "uri": "file://test.test_uncertainty_prediction_types_RMSEWithUncertainty-TotalUncertainty-5_/predictions.txt"
+    },
+    "test.test_uncertainty_prediction_types[RMSEWithUncertainty-VirtEnsembles-1]": {
+        "uri": "file://test.test_uncertainty_prediction_types_RMSEWithUncertainty-VirtEnsembles-1_/predictions.txt"
+    },
+    "test.test_uncertainty_prediction_types[RMSEWithUncertainty-VirtEnsembles-5]": {
+        "uri": "file://test.test_uncertainty_prediction_types_RMSEWithUncertainty-VirtEnsembles-5_/predictions.txt"
+    },
+    "test.test_util_eval_metric[Logloss]": {
+        "uri": "file://test.test_util_eval_metric_Logloss_/predictions.npy"
+    },
+    "test.test_util_eval_metric[PRAUC]": {
+        "uri": "file://test.test_util_eval_metric_PRAUC_/predictions.npy"
+    },
+    "test.test_util_eval_metric[RMSE]": {
+        "uri": "file://test.test_util_eval_metric_RMSE_/predictions.npy"
+    },
+    "test.test_util_eval_metric_multiclass[AUC:misclass_cost_matrix=0/1/0.33/0/0/0.239/-1/1.2/0]": {
+        "uri": "file://test.test_util_eval_metric_multiclass_AUC_misclass_cost_matrix=0_1_0.33_0_0_0.239_-1_1.2_0_/predictions.npy"
+    },
+    "test.test_util_eval_metric_multiclass[AUC:type=OneVsAll]": {
+        "uri": "file://test.test_util_eval_metric_multiclass_AUC_type=OneVsAll_/predictions.npy"
+    },
+    "test.test_util_eval_metric_multiclass[AUC]": {
+        "uri": "file://test.test_util_eval_metric_multiclass_AUC_/predictions.npy"
+    },
+    "test.test_util_eval_metric_multiclass[MultiClass]": {
+        "uri": "file://test.test_util_eval_metric_multiclass_MultiClass_/predictions.npy"
+    },
+    "test.test_util_eval_metric_multiclass[PRAUC:type=OneVsAll]": {
+        "uri": "file://test.test_util_eval_metric_multiclass_PRAUC_type=OneVsAll_/predictions.npy"
+    },
+    "test.test_util_eval_metric_multiclass[PRAUC]": {
+        "uri": "file://test.test_util_eval_metric_multiclass_PRAUC_/predictions.npy"
+    },
+    "test.test_util_eval_metric_pairwise[PairAccuracy]": {
+        "uri": "file://test.test_util_eval_metric_pairwise_PairAccuracy_/predictions.npy"
+    },
+    "test.test_util_eval_metric_pairwise[PairLogit]": {
+        "uri": "file://test.test_util_eval_metric_pairwise_PairLogit_/predictions.npy"
+    },
+    "test.test_util_eval_metric_subgroups[PFound]": {
+        "uri": "file://test.test_util_eval_metric_subgroups_PFound_/predictions.npy"
+    },
+    "test.test_verbose_int[CPU-5]": {
+        "uri": "file://test.test_verbose_int_CPU-5_/catboost_training.json"
+    },
+    "test.test_verbose_int[CPU-False]": {
+        "uri": "file://test.test_verbose_int_CPU-False_/catboost_training.json"
+    },
+    "test.test_verbose_int[CPU-True]": {
+        "uri": "file://test.test_verbose_int_CPU-True_/catboost_training.json"
+    },
+    "test.test_zero_baseline[CPU]": {
+        "uri": "file://test.test_zero_baseline_CPU_/model.bin"
+    },
+    "test_catboost_utils.test_create_cd_label_and_cat_features": {
+        "uri": "file://test_catboost_utils.test_create_cd_label_and_cat_features/column_description"
+    },
+    "test_catboost_utils.test_create_cd_label_and_feature_names": {
+        "uri": "file://test_catboost_utils.test_create_cd_label_and_feature_names/column_description"
+    },
+    "test_catboost_utils.test_create_cd_label_cat_text_and_emb_features": {
+        "uri": "file://test_catboost_utils.test_create_cd_label_cat_text_and_emb_features/column_description"
+    },
+    "test_catboost_utils.test_create_cd_label_cat_text_and_emb_features_with_names": {
+        "uri": "file://test_catboost_utils.test_create_cd_label_cat_text_and_emb_features_with_names/column_description"
+    },
+    "test_catboost_utils.test_create_cd_label_cat_text_and_emb_features_with_partial_names": {
+        "uri": "file://test_catboost_utils.test_create_cd_label_cat_text_and_emb_features_with_partial_names/column_description"
+    },
+    "test_catboost_utils.test_create_cd_label_only": {
+        "uri": "file://test_catboost_utils.test_create_cd_label_only/column_description"
+    }
+}

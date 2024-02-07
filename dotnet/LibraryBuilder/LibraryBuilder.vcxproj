@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{9B7B9F03-8C4E-48B6-86D7-1857EE2A4C06}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <NMakeBuildCommandLine>"$(SolutionDir)../../build/build_native.py" --build-type Debug --targets catboostmodel --build-root-dir "$(SolutionDir)$(Configuration)\build" &amp;&amp; copy "$(SolutionDir)$(Configuration)\build\catboost\libs\model_interface\catboostmodel.lib" "$(OutDir)" &amp;&amp; copy "$(SolutionDir)$(Configuration)\build\catboost\libs\model_interface\catboostmodel.dll" "$(OutDir)"</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>"$(SolutionDir)../../build/build_native.py" --rebuild --build-type Debug --targets catboostmodel --build-root-dir "$(SolutionDir)$(Configuration)\build" &amp;&amp; copy "$(SolutionDir)$(Configuration)\build\catboost\libs\model_interface\catboostmodel.lib" "$(OutDir)" &amp;&amp; copy "$(SolutionDir)$(Configuration)\build\catboost\libs\model_interface\catboostmodel.dll" "$(OutDir)"</NMakeReBuildCommandLine>
+    <NMakeOutput>$(OutDir)catboostmodel.lib</NMakeOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <NMakeBuildCommandLine>"$(SolutionDir)../../build/build_native.py" --build-type Release --targets catboostmodel --build-root-dir "$(SolutionDir)$(Configuration)\build" &amp;&amp; copy "$(SolutionDir)$(Configuration)\build\catboost\libs\model_interface\catboostmodel.lib" "$(OutDir)" &amp;&amp; copy "$(SolutionDir)$(Configuration)\build\catboost\libs\model_interface\catboostmodel.dll" "$(OutDir)"</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>"$(SolutionDir)../../build/build_native.py" --rebuild --build-type Release --targets catboostmodel --build-root-dir "$(SolutionDir)$(Configuration)\build" &amp;&amp; copy "$(SolutionDir)$(Configuration)\build\catboost\libs\model_interface\catboostmodel.lib" "$(OutDir)" &amp;&amp; copy "$(SolutionDir)$(Configuration)\build\catboost\libs\model_interface\catboostmodel.dll" "$(OutDir)"</NMakeReBuildCommandLine>
+    <NMakeOutput>$(OutDir)catboostmodel.lib</NMakeOutput>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

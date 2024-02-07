@@ -1,0 +1,56 @@
+include "catboost/libs/model/flatbuffers/ctr_data.fbs";
+
+namespace NCatBoostFbs;
+
+table TKeyValue {
+    Key:string (required, key);
+    Value:string (required);
+}
+//
+
+struct TNonSymmetricTreeStepNode {
+    LeftSubtreeDiff: uint16;
+    RightSubtreeDiff: uint16;
+}
+
+struct TRepackedBin {
+    FeatureIndex: uint16 = 0;
+    XorMask: uint8 = 0;
+    SplitIdx: uint8 = 0;
+}
+
+table TModelTrees {
+    ApproxDimension:int;
+    TreeSplits:[int];
+    TreeSizes:[int];
+    TreeStartOffsets:[int]; // unnecessary, but useful for zero copy loaded model
+
+    CatFeatures:[TCatFeature];
+    FloatFeatures:[TFloatFeature];
+    OneHotFeatures:[TOneHotFeature];
+    CtrFeatures:[TCtrFeature];
+
+    LeafValues:[double];
+    LeafWeights:[double];
+
+    NonSymmetricStepNodes:[TNonSymmetricTreeStepNode];
+    NonSymmetricNodeIdToLeafId:[uint32];
+
+    TextFeatures:[TTextFeature];
+    EstimatedFeatures:[TEstimatedFeature];
+    Scale:double = 1;
+    Bias:double = 0;
+    MultiBias:[double];
+    RepackedBins:[TRepackedBin];
+    EmbeddingFeatures:[TEmbeddingFeature];
+}
+
+table TModelCore {
+    FormatVersion:string;
+    ModelTrees:TModelTrees;
+    InfoMap:[TKeyValue];
+
+    ModelPartIds:[string]; // contains info about model structures, laying after ModelCore
+}
+
+root_type TModelCore;

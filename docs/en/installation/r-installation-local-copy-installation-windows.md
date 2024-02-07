@@ -1,0 +1,1 @@
+{% include [r-installation-local-copy](r-installation-local-copy-installation.md) %}

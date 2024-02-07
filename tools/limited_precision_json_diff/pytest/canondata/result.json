@@ -1,0 +1,22 @@
+{
+    "test.test_cut": [
+        {
+            "uri": "file://test.test_cut/stdout"
+        }
+    ],
+    "test.test_totally_different": [
+        {
+            "uri": "file://test.test_totally_different/stdout"
+        }
+    ],
+    "test.test_with_small_noise": [
+        {
+            "uri": "file://test.test_with_small_noise/stdout"
+        }
+    ],
+    "test.test_with_small_noise_outside_precision": [
+        {
+            "uri": "file://test.test_with_small_noise_outside_precision/stdout"
+        }
+    ]
+}
