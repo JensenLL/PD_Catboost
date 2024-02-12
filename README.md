@@ -1,191 +1,179 @@
-If you want to use a trained model, we provide 4 different ways to do this: C++ while building with ya.make, Python API, dynamic C library with C++ wrapper and C++ header-only evaluator.
+# 关于Catboost底层源码的实现分析
 
-## ya.make based projects
-If you use `ya.make` build system, the most convenient interface for model evaluation is ```TFullModel``` class, defined in [catboost/libs/model/model.h](https://github.com/catboost/catboost/tree/master/catboost/libs/model/model.h).
-Small example:
-```cpp
-model = ReadModel(modelPath);
+[Website](https://catboost.ai) |
+[Documentation](https://catboost.ai/docs/) |
+[Tutorials](https://catboost.ai/docs/concepts/tutorials.html) |
+[Installation](https://catboost.ai/docs/concepts/installation.html) |
+[Release Notes](https://github.com/catboost/catboost/releases)
 
-double result = 0.;
-const TVector<float> floatFeatures[] = {{1, 2, 3}};
-const TVector<TStringBuf> catFeatures[] = {{"a", "b", "c"}};
-model.Calc(floatFeatures, catFeatures, MakeArrayRef(&result, 1));
+[![Twitter](https://img.shields.io/badge/@CatBoostML--_.svg?style=social&logo=twitter)](https://twitter.com/CatBoostML)
+
+`说明:`[catboost源码定期会更新,下述代码基于2024.02.06master源码]
+----
+### 分析目的: 主要是查看 `底层BuildTree的实现` 和 `对应文献中解决预测偏差创建的模型M` 以及 `余弦相似度的实现`
+- CatBoost 是一种支持多线程的机器学习算法库,CatBoost 使用了多线程来加速模型训练过程，尤其是在处理大量数据和复杂模型时能够发挥其优势。
+----
+
+- 首先从github上获取catboost的源码,catboost的底层实现是c++,所以当使用python运行catboost时,相当于使用提供的python接口,对训练的数据和配置的超参数进行解析,并传入c++底层代码中进行运行。
+- 对克隆下来的[https://github.com/catboost/catboost]文件打开其中的catboost文件夹,源码在此处。
+- `./python-package/catboost/core.py`文件中定义了在使用python应用catboost时所调用的' `CatBoostRegressor`和`CatBoostClassifier类`,其都为_CatBoostBase的父类的子类进行继承,前两者的上层为CatBoost类,内部的_fit()方法,是对数据的训练。
+- 在_CatBoostBase类的构造函数中的初始化中出现:
+``` 
+## code core.py
+def __init__(self, params):
+init_params = params.copy() if params is not None else {}
+stringify_builtin_metrics(init_params)
+self._init_params = init_params
+if 'thread_count' in self._init_params and self._init_params['thread_count'] == -1:
+    self._init_params.pop('thread_count')
+if 'fixed_binary_splits' in self._init_params and self._init_params['fixed_binary_splits'] is None:
+    self._init_params['fixed_binary_splits'] = []
+self._object = _CatBoost()
 ```
-
-## Python API
-The simplest but not the fastest way to evaluate model predictions, just use ```model.predict```.
-Small example:
-```python
-model = CatBoostClassifier()
-model.load_model('catboost_model.dump')
-model.predict(object_features)
+最后一行的 `self._object = _CatBoost()` 则是调用_catboost文件内的内容
 ```
-If your data is bigger than 1000 objects we recommend you to use ```catboost.TPool``` class to get full performance.
+## code core.py
+from . import _catboost
+from .metrics import BuiltinMetric
 
-Read python API documentation [here](https://catboost.ai/docs/concepts/python-quickstart.html) for more information.
 
+_typeof = type
 
-## Dynamic library ```libcatboostmodel.(so|dll|dylib)```
-This is the fastest way to evaluate model. Library interface is C API but we provide simple C++ header-only wrapper.
-but you can easily use it's C API interface from any language you like.
-The code of library and small CMake usage example can be found in [model_interface](https://github.com/catboost/catboost/tree/master/catboost/libs/model_interface)
-For debian based linux distributions we provide catboost-model-library debian package that comes with dynamic library`/usr/lib/libcatboostmodel.so.1`, symlink to current version `/usr/lib/libcatboostmodel.so -> /usr/lib/libcatboostmodel.so.1`
-also it provides two header files:
+_PoolBase = _catboost._PoolBase
+_CatBoost = _catboost._CatBoost
 ```
-/usr/include/catboost_model/c_api.h
-/usr/include/catboost_model/wrapped_calcer.h
+- `_catboost`文件为_catboost.pyx(与core.py属于统一文件夹内)
 ```
-For other platforms you can build this library with ymake:
-```bash
-ya make -r catboost/libs/model_interface/
+cdef extern from "catboost/libs/train_lib/train_model.h":
+    cdef void TrainModel(
+        TJsonValue params,
+        TQuantizedFeaturesInfoPtr quantizedFeaturesInfo,
+        const TMaybe[TCustomObjectiveDescriptor]& objectiveDescriptor,
+        const TMaybe[TCustomMetricDescriptor]& evalMetricDescriptor,
+        const TMaybe[TCustomCallbackDescriptor]& callbackDescriptor,
+        TDataProviders pools,
+        TMaybe[TFullModel*] initModel,
+        THolder[TLearnProgress]* initLearnProgress,
+        const TString& outputModelPath,
+        TFullModel* dstModel,
+        const TVector[TEvalResult*]& testApproxes,
+        TMetricsAndTimeLeftHistory* metricsAndTimeHistory,
+        THolder[TLearnProgress]* dstLearnProgress
+    ) nogil except +ProcessException
 ```
+可知调用的是`"catboost/libs/train_lib/train_model.h"`文件中的`TrainModel`函数,声明一个名为TrainModel的外部函数,
+该函数在C/C++的头文件"catboost/libs/train_lib/train_model.h"中定义。
+在train_model.cpp文件中定义了多个TrainModel()函数,但是传入参数不一致,`调用的过程如下:`
 
-With this library you can:
- - Load model from file or initialize it from memory
- - Evaluate model
- - Access basic model information: tree count, float features count, categorical features count and model metadata.
-**NOTICE:** Currently library provides read-only model methods only. If you need model metadata modification or model truncation abilities - feel free to contact catboost team for API extension.
-
-
-We will describe process of model integration for model trained on Adult dataset with model trained via CLI catboost with that command:
-`./catboost_linux fit -f adult/train --cd adult/cd -i 500 -m adult_500.cbm`
-
-### C API
-You can find some useful information in doxygen-style documentation in [c_api.h](https://github.com/catboost/catboost/tree/master/catboost/libs/model_interface/c_api.h)
-
-**Note:** if trained model uses only numeric features you, can switch evaluation backend to CUDA supporting GPU with `EnableGPUEvaluation` method both in C API and C++ wrapper.
-
-Sample C code:
-```cpp
-#include <catboost_model/c_api.h> // this include is valid only for debian
-#include <iostream>
-#include <string>
-
-void catboost_demo() {
-    ModelCalcerHandle* modelHandle = ModelCalcerCreate();
-    if (!modelHandle) {
-        std::cout << "Model handle creation failed: " << GetErrorString() << std::endl;
-        return;
+- 首先调用1607行的train_model.cpp文件最后的TrainModel函数(输入参数为13个),对来自python文件的参数进行预处理。
+- 在第一个调用的TrainModel内的最后调用函数946行的TrainModel(输入参数为17个):
+- 该函数执行内容: `1.更新输出选项` `2.判断CPU和GPU的选择` `3.配置catBoostOptions()` `4.提取损失函数` `5.量化特征信息` `6.ReorderByTimestampLearnDataIfNeeded()如果需要按照时间戳对数据进行重排列` `7.ShuffleLearnDataIfNeeded()如果需要重新打乱学习数据` `8.分析内存` `9.进行标签转化` `10.最后调用modelTrainerHolder->TrainModel()函数 (1154行)`
+- modelTrainerHolder->TrainModel()函数位于773行(输入参数为19个):
+- 该函数执行内容: `1.参数初始化` `2.定义初始的近似值Approx` `3.创建TLearnContext ctx变量用于存储特定学习数据结构的类,例如prng、学习进度和目标分类器` `4.调用Train()函数位于375行` `5.然后保存模型SaveModel()并对模型进行评估ModelBasedEval()`
+- 调用的Train()函数,该函数执行内容如下:
+```
+    ##375行 Train函数下的419行迭代循环
+    ...
+    InitializeAndCheckMetricData(internalOptions, data, *ctx, &metricsData);
+    ...
+    for (ui32 iter = ctx->LearnProgress->GetCurrentTrainingIterationCount();
+         continueTraining && (iter < ctx->Params.BoostingOptions->IterationCount);
+         ++iter)
+    {
+        ...
+        profile.StartNextIteration();
+        ...
+        TrainOneIteration(data, ctx);
+        ...
+        profile.FinishIteration();
+        ...
     }
-    if (!LoadFullModelFromFile(modelHandle, "adult_500.cbm")) {
-        std::cout << "Load model failed: " << GetErrorString() << std::endl;
-        return;
+    ...
+    ctx->SaveProgress(onSaveSnapshotCallback);
+    ...
+```
+由上述循环可知,在迭代循环内部调用TrainOneIteration(data, ctx);函数对训练数据进行第一迭代,大部分函数调用`./catboost/private/libs/algo/`目录下的算法函数文件,例如其中的`train.cpp`
+```
+void TrainOneIteration(const NCB::TTrainingDataProviders& data, TLearnContext* ctx) {
+    ...
+    CheckInterrupted(); // check after long-lasting operation
+    #创建最佳树变量
+    std::variant<TSplitTree, TNonSymmetricTreeStructure> bestTree;
+    {
+        ... 
+        #采用贪婪方式进行搜索
+        GreedyTensorSearch(
+        data,
+        modelLength,
+        profile,
+        takenFold,
+        ctx,
+        &bestTree
+        );
     }
-    std::cout << "Loaded model with " << GetTreeCount(modelHandle) << " trees." << std::endl;
-    std::cout << "Model expects " << GetFloatFeaturesCount(modelHandle) << " float features and " << GetCatFeaturesCount(modelHandle) << " categorical features" << std::endl;
-    const std::string paramsKey = "params";
-    if (CheckModelMetadataHasKey(modelHandle, paramsKey.c_str(), paramsKey.size())) {
-        size_t paramsStringLength = GetModelInfoValueSize(modelHandle, paramsKey.c_str(), paramsKey.size());
-        std::string params(GetModelInfoValue(modelHandle, paramsKey.c_str(), paramsKey.size()), paramsStringLength);
-        std::cout << "Applying model trained with params: " << params << std::endl;
+    ...
+    CheckInterrupted(); // check after long-lasting operation
+    {
+        ... #计算树状结构的在线CTR
     }
-    const size_t docCount = 3;
-    const size_t floatFeaturesCount = 6;
-    const float floatFeatures[docCount ][floatFeaturesCount ] = {
-        {28.0, 120135.0, 11.0, 0.0, 0.0, 40.0},
-        {49.0, 57665.0, 13.0, 0.0, 0.0, 40.0},
-        {34.0, 355700.0, 9.0, 0.0, 0.0, 20.0}
-    };
-    const float* floatFeaturesPtrs[docCount] = {
-        floatFeatures[0],
-        floatFeatures[1],
-        floatFeatures[2]
-    };
-    const size_t catFeaturesCount = 8;
-    const char* catFeatures[docCount][8] = {
-        {"Private", "Assoc-voc", "Never-married", "Sales", "Not-in-family", "White", "Female", "United-States"},
-        {"?", "Bachelors", "Divorced", "?", "Own-child", "White", "Female", "United-States"},
-        {"State-gov", "HS-grad", "Separated", "Adm-clerical", "Unmarried", "White", "Female", "United-States"}
-    };
-    const char** catFeaturesPtrs[docCount] = {
-        catFeatures[0],
-        catFeatures[1],
-        catFeatures[2]
-    };
-    double result[3] = { 0 };
-    if (!CalcModelPrediction(
-        modelHandle,
-        docCount,
-        floatFeaturesPtrs, floatFeaturesCount,
-        catFeaturesPtrs, catFeaturesCount,
-        result, docCount)
+    CheckInterrupted(); // check after long-lasting operation
+
+    TVector<TVector<double>> treeValues; // [dim][leafId]
+    TVector<double> sumLeafWeights; // [leafId]
+    ...
+    #近似计算叶子结果
+    if (
+        ctx->Params.ObliviousTreeOptions->DevLeafwiseApproxes.Get() &&
+        ctx->Params.BoostingOptions->BoostingType.Get() == EBoostingType::Plain
+        && !treeHasMonotonicConstraints
+        && error->GetErrorType() == EErrorType::PerObjectError
     ) {
-        std::cout << "Prediction failed: " << GetErrorString() << std::endl;
-        return;
+        CalcApproxesLeafwise(
+            data,
+            *error,
+            bestTree,
+            ctx,
+            &treeValues,
+            &indices
+        );
+    } else {
+        CalcLeafValues(
+            data,
+            *error,
+            bestTree,
+            ctx,
+            &treeValues,
+            &indices
+        );
     }
-    std::cout << "Results: ";
-    for (size_t i = 0; i < 3; ++i) {
-        std::cout << result[i] << " ";
-    }
-    std::cout << std::endl;
-    /* Sometimes you need to evaluate model on single object.
-       We provide special method for this case which is prettier and is little faster than calling batch evaluation for single object
-    */
-    double singleResult = 0.0;
-    if (!CalcModelPredictionSingle(
-        modelHandle,
-        floatFeatures[0], floatFeaturesCount,
-        catFeatures[0], catFeaturesCount,
-        &singleResult, 1)
-    ) {
-        std::cout << "Single prediction failed: " << GetErrorString() << std::endl;
-        return;
-    }
-    std::cout << "Single prediction: " << singleResult << std::endl;
-}
-```
-### C++ wrapper API
-We also provide simple but useful C++ wrapper for C API interface: [wrapped_calcer.h](https://github.com/catboost/catboost/tree/master/catboost/libs/model_interface/wrapped_calcer.h)
-There is a sample CMake project in [catboost/libs/model_interface/cmake_example/CMakeLists.txt](https://github.com/catboost/catboost/tree/master/catboost/libs/model_interface/cmake_example/CMakeLists.txt)
-Using this wrapper is as simple as
-```cpp
-#include <catboost_model/wrapped_calcer.h>
-#include <iostream>
-#include <vector>
-#include <string>
+    ...
+    #近似计算树结构和更新树结构近似值
+    CheckInterrupted(); // check after long-lasting operation
+    TConstArrayRef<ui32> learnPermutationRef = ctx->LearnProgress->AveragingFold.GetLearnPermutationArray();
 
-void cpp_catboost_wrapper_demo() {
-    ModelCalcerWrapper calcer("adult_500.cbm"); // load model from file
-    std::cout << "Loaded model with " << calcer.GetTreeCount() << " trees, " << calcer.GetFloatFeaturesCount() << " float features and " << calcer.GetCatFeaturesCount() << " categorical features" << std::endl;
-    // Access model metadata fields
-    if (calcer.CheckMetadataHasKey("params")) {
-        std::cout << "Model trained with params: " << calcer.GetMetadataKeyValue("params") << std::endl;
-    }
-    // Batch model evaluation
-    std::vector<std::vector<std::string>> catFeatures = {
-        {"Private", "Assoc-voc", "Never-married", "Sales", "Not-in-family", "White", "Female", "United-States"},
-        {"?", "Bachelors", "Divorced", "?", "Own-child", "White", "Female", "United-States"},
-        {"State-gov", "HS-grad", "Separated", "Adm-clerical", "Unmarried", "White", "Female", "United-States"}
-    };
-    std::vector<std::vector<float>> floatFeatures = {
-        {28.0, 120135.0, 11.0, 0.0, 0.0, 40.0},
-        {49.0, 57665.0, 13.0, 0.0, 0.0, 40.0},
-        {34.0, 355700.0, 9.0, 0.0, 0.0, 20.0}
-    };
-    std::vector<double> results = calcer.Calc(floatFeatures, catFeatures);
-    std::cout << "Results: ";
-    for (const auto result : results) {
-        std::cout << result << " ";
-    }
-    std::cout << std::endl;
-    // Single object model evaluation
-    std::cout << "Single result: " << calcer.Calc(floatFeatures[0], catFeatures[0]) << std::endl;
+    const size_t leafCount = treeValues[0].size();
+    sumLeafWeights = SumLeafWeights(
+        leafCount,
+        indices,
+        learnPermutationRef,
+        GetWeights(*data.Learn->TargetData),
+        ctx->LocalExecutor
+    );
+    const auto lossFunction = ctx->Params.LossFunctionDescription->GetLossFunction();
+    const bool usePairs = UsesPairsForCalculation(lossFunction);
+    NormalizeLeafValues(
+        usePairs,
+        ctx->Params.BoostingOptions->LearningRate,
+        sumLeafWeights,
+        &treeValues
+    );
+    ...
+    #更新最近的近似
+    ctx->LearnProgress->TreeStats.emplace_back();
+    ctx->LearnProgress->TreeStats.back().LeafWeightsSum = std::move(sumLeafWeights);
+    ctx->LearnProgress->LeafValues.push_back(std::move(treeValues));
+    ctx->LearnProgress->TreeStruct.push_back(std::move(bestTree));
+    ...
+    CheckInterrupted(); // check after long-lasting operation
 }
-```
-ModelCalcerWrapper also has a constructor from a memory buffer.
-
-## C++ header-only evaluator
-**Not recommended to use**. This variant is the simplest way to integrate model evaluation code into your C++ application, but have lots limitations:
-* Only valid for models with float features only.
-* Depends on Flatbuffers library - you have to install and build `flatc` toolkit manually or have it integrated in your build system.
-We implemented this evaluator to allow simple catboost code integration in some Android projects and to simplify integration of Catboost models in CERN experiments.
-Look at [standalone_evaluator/CMakeLists.txt](https://github.com/catboost/catboost/tree/master/catboost/libs/standalone_evaluator/CMakeLists.txt) and
-[standalone_evaluator/example.cpp](https://github.com/catboost/catboost/tree/master/catboost/libs/standalone_evaluator/example.cpp).
-Code snippet:
-```cpp
-NCatboostStandalone::TOwningEvaluator evaluator("model.cbm");
-auto modelFloatFeatureCount = (size_t)evaluator.GetFloatFeatureCount();
-std::cout << "Model uses: " << modelFloatFeatureCount << " float features" << std::endl;
-std::vector<float> features(modelFloatFeatureCount);
-std::cout << evaluator.Apply(features, NCatboostStandalone::EPredictionType::RawValue) << std::endl;
 ```
